@@ -1,0 +1,19 @@
+version: '3'
+services:
+  user:
+    container_name: user_service
+    build:
+      context: ./user-service   # Adjust the path as needed
+      dockerfile: Dockerfile
+    image: bblaprib/testdemouser:0.0.2
+    ports:
+      - "8081:8082"
+
+  department:
+    container_name: department_service
+    build:
+      context: ./department-service   # Adjust the path as needed
+      dockerfile: Dockerfile
+    image: bblaprib/testdemodept:0.0.1
+    ports:
+      - "8083:8080"
